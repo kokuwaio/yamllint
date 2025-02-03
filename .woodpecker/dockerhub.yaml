@@ -1,0 +1,17 @@
+when:
+  instance: ci.schnabel.org
+  repo: kokuwaio/yamllint
+  event: push
+  branch: main
+  path: README.md
+
+steps:
+
+  metadata:
+    image: kokuwaio/dockerhub-metadata
+    settings:
+      repository: kokuwaio/yamllint
+      description-short: A Woodpecker CI plugin for yamllint to lint yaml files.
+      categories: [developer-tools, integration-and-delivery]
+      username: {from_secret: DOCKERHUB_USERNAME}
+      password: {from_secret: DOCKERHUB_PASSWORD}
