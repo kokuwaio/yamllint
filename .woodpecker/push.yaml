@@ -24,7 +24,7 @@ steps:
       - echo "$AUTH" > /tmp/auth.json
       - skopeo copy --all --preserve-digests --dest-precompute-digests
           docker://ci-registry.schnabel.org/kokuwaio/yamllint:$CI_PIPELINE_NUMBER
-          docker://$URL/kokuwaio/yamllint:1.35.0
+          docker://$URL/kokuwaio/yamllint:1.35.1
       - skopeo copy --all --preserve-digests --dest-precompute-digests
           docker://ci-registry.schnabel.org/kokuwaio/yamllint:$CI_PIPELINE_NUMBER
           docker://$URL/kokuwaio/yamllint:latest
