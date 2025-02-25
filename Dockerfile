@@ -2,7 +2,7 @@
 ## Debian base layer with python
 ##
 
-FROM docker.io/library/debian:12.9-slim@sha256:40b107342c492725bc7aacbe93a49945445191ae364184a6d24fedb28172f6f7 AS debian
+FROM docker.io/library/debian:12.9-slim@sha256:12c396bd585df7ec21d5679bb6a83d4878bc4415ce926c9e5ea6426d23c60bdc AS debian
 RUN rm -rf /etc/*- /tmp/* /var/cache/* /var/log/* /var/lib/dpkg/*-old /var/lib/dpkg/status
 RUN --mount=type=cache,target=/var/lib/apt/lists,sharing=locked \
 	apt-get -qq update && \
