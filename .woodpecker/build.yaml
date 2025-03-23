@@ -31,7 +31,7 @@ steps:
         --label=org.opencontainers.image.source=$CI_REPO_CLONE_URL
         --label=org.opencontainers.image.vendor=kokuwa.io
         --label=org.opencontainers.image.licenses=GPL-3.0-or-later
-        --label=org.opencontainers.image.version=1.36.2
+        --label=org.opencontainers.image.version=1.37.0
 
   test:
     image: ci-registry.schnabel.org/kokuwaio/yamllint:${CI_PIPELINE_NUMBER}-${PLATFORM}

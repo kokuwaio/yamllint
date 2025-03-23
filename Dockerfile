@@ -18,7 +18,7 @@ RUN --mount=type=cache,target=/var/lib/apt/lists,sharing=locked \
 	apt-get -qq update && \
 	apt-get -qq install --yes --no-install-recommends python3-pip && \
 	rm -rf /etc/*- /var/lib/dpkg/*-old /var/lib/dpkg/status /var/cache/* /var/log/*
-RUN pip install yamllint==1.36.2 \
+RUN pip install yamllint==1.37.0 \
 		--root=/build \
 		--root-user-action=ignore \
 		--break-system-packages \
