@@ -9,7 +9,7 @@ RUN --mount=type=cache,target=/var/lib/apt/lists,sharing=locked \
 	--mount=type=tmpfs,target=/var/lib/dpkg \
 	--mount=type=tmpfs,target=/var/log \
 	apt-get -qq update && \
-	apt-get -qq install --yes --no-install-recommends python3-minimal libpython3-stdlib 
+	apt-get -qq install --yes --no-install-recommends python3-minimal libpython3-stdlib
 
 ##
 ## Download yamllint
