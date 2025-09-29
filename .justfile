@@ -15,14 +15,14 @@
 
 # Build image with local docker daemon.
 @build:
-	docker buildx build . --build-arg=NPM_CONFIG_REGISTRY --platform=linux/amd64,linux/arm64
+	docker buildx build . --platform=linux/amd64,linux/arm64 --build-arg=PIP_INDEX_URL --build-arg=PIP_TRUSTED_HOST
 
 # Inspect image layers with `dive`.
 @dive TARGET="":
-	dive build . --build-arg=NPM_CONFIG_REGISTRY --target={{TARGET}}
+	dive build . --target={{TARGET}} --build-arg=PIP_INDEX_URL --build-arg=PIP_TRUSTED_HOST
 
 # Test created image.
 @test:
-	docker buildx build . --build-arg=NPM_CONFIG_REGISTRY --load --tag=kokuwaio/yamllint:dev
+	docker buildx build . --load --tag=kokuwaio/yamllint:dev --build-arg=PIP_INDEX_URL --build-arg=PIP_TRUSTED_HOST
 	docker run --rm --read-only --volume=$(pwd):$(pwd):ro --workdir=$(pwd) kokuwaio/yamllint:dev
 

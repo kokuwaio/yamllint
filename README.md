@@ -23,27 +23,32 @@ Woodpecker:
 ```yaml
 steps:
   yamllint:
-    image: kokuwaio/yamllint
+    depends_on: []
+    image: kokuwaio/yamllint:v1.37.1
     settings:
       no-warnings: true
       format: json
     when:
       event: pull_request
-      path: [.yamllint.yaml, "**/*.y*ml"]
+      path: "**/*.y*ml"
 ```
 
-Gitlab:
+Gitlab: (using script is needed because of <https://gitlab.com/gitlab-org/gitlab/-/issues/19717>)
 
 ```yaml
 yamllint:
+  needs: []
   stage: lint
-  image: kokuwaio/yamllint
+  image:
+    name: kokuwaio/yamllint:v1.37.1
+    entrypoint: [""]
+  script: [/usr/local/bin/entrypoint.sh]
   variables:
     PLUGIN_NO_WARNINGS: true
     PLUGIN_FORMAT: json
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-      changes: [.yamllint.yaml, "**/*.y*ml"]
+      changes: ["**/*.y*ml"]
 ```
 
 CLI:
