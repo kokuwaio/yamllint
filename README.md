@@ -24,7 +24,7 @@ Woodpecker:
 steps:
   yamllint:
     depends_on: []
-    image: kokuwaio/yamllint:v1.37.1
+    image: kokuwaio/yamllint:v1.38.0
     settings:
       no-warnings: true
       format: json
@@ -40,7 +40,7 @@ yamllint:
   needs: []
   stage: lint
   image:
-    name: kokuwaio/yamllint:v1.37.1
+    name: kokuwaio/yamllint:v1.38.0
     entrypoint: [""]
   script: [/usr/local/bin/entrypoint.sh]
   variables:
