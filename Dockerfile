@@ -25,7 +25,7 @@ RUN --mount=type=cache,target=/var/lib/apt/lists,sharing=locked \
 
 ARG PIP_INDEX_URL
 ARG PIP_TRUSTED_HOST
-RUN pip install yamllint==v1.37.1 \
+RUN pip install yamllint==v1.38.0 \
 		--root=/build \
 		--root-user-action=ignore \
 		--break-system-packages \
