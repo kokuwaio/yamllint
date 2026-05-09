@@ -3,7 +3,7 @@
 ##
 
 # hadolint global ignore=DL3008
-FROM docker.io/library/debian:13.4-slim@sha256:bacd8d9d762705be0fdc6f98aa280c6fb29d9e12217aedcf77125397dcee1ab5 AS debian
+FROM docker.io/library/debian:13.4-slim@sha256:109e2c65005bf160609e4ba6acf7783752f8502ad218e298253428690b9eaa4b AS debian
 RUN --mount=type=cache,target=/var/lib/apt/lists,sharing=locked \
 	--mount=type=cache,target=/var/cache \
 	--mount=type=tmpfs,target=/var/lib/dpkg \
