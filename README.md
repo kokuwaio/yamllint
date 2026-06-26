@@ -54,7 +54,7 @@ yamllint:
 CLI:
 
 ```bash
-docker run --rm --volume=$(pwd):$(pwd):ro --workdir=$(pwd) kokuwaio/yamllint --no-warnings --format=json
+docker run --rm --volume=$PWD:$PWD:ro --workdir=$PWD kokuwaio/yamllint --no-warnings --format=json
 ```
 
 ## Settings

@@ -5,7 +5,7 @@ set -eu;
 ## check if any yaml file is present
 ##
 
-FILES=$(find "$(pwd)" -type f -name '*.yml' -o -name '*.yaml')
+FILES=$(find "$PWD" -type f -name '*.yml' -o -name '*.yaml')
 if [[ ! "$FILES" ]]; then
 	echo "No yaml file found!"
 	exit 1
@@ -26,9 +26,9 @@ fi
 if [[ "${PLUGIN_NO_WARNINGS:-}" == "true" ]]; then
 	COMMAND+=" --no-warnings"
 fi
-COMMAND+=" $(pwd)"
+COMMAND+=" ."
 
-# custom args, e.g. docker run --rm --volume=$(pwd):$(pwd) --workdir=$(pwd) --env=CI=test kokuwaio/yamllint --format=json
+# custom args, e.g. docker run --rm --volume=$PWD:$PWD --workdir=$PWD --env=CI=test kokuwaio/yamllint --format=json
 if [[ -n "${1:-}" ]]; then
 	COMMAND+=" $*"
 fi
