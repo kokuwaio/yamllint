@@ -17,7 +17,7 @@ fi
 
 COMMAND="yamllint"
 if [[ -n "${PLUGIN_CONFIG_FILE:-}" ]]; then
-	COMMAND+=" --config-file=$PLUGIN_CONFIG"
+	COMMAND+=" --config-file=$PLUGIN_CONFIG_FILE"
 fi
 COMMAND+=" --format=${PLUGIN_FORMAT:-colored}"
 if [[ "${PLUGIN_STRICT:-true}" == "true" ]]; then
